@@ -38,7 +38,8 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  arr.splice(idx, 3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,7 +49,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,7 +67,14 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  let strArray = str.split('');
+  result.push(strArray.join(''));
+
+  while(strArray.length>0){
+    strArray.shift();
+    result.push(strArray.join(''));
+
+  }
   return result;
 };
 
@@ -79,7 +87,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  return arr.split('');
 };
 
 
@@ -122,11 +130,18 @@ const gruffaloCrumble = {
     'Bake for 12-15 hours',
   ],
 };
+// Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
 
+// Use slice for this function, maybe more than once. The Array.indexOf() method may also be helpful.
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let listItem = '';
+  for(let i = 0; i < recipe.ingredients.length; i++){
+    listItem = recipe.ingredients[i].split(' ').splice(2).join(' ');
+    result.push(listItem);
+  }
+
   return result;
 };
 
