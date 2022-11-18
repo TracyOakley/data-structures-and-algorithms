@@ -143,8 +143,11 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  return arr.filter(charObj => Object.keys(charObj).includes('children')).map(charOb => charOb.name).includes(character);
+  // return arr.filter(charObj => Object.keys(charObj).includes('children')).map(charOb => charOb.name).includes(character);
 
+  let newArr = arr.filter(charObj => Object.keys(charObj).includes('children')).filter(charOb => Object.values(charOb).includes(character));
+
+  return newArr.length === 0 ? false : true;
   //
 
 };
