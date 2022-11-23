@@ -3,13 +3,14 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named longestString that takes in an array of strings and returns the index position of the longest string. 
+Write a function named longestString that takes in an array of strings and returns the index position of the longest string.
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-// Solution code here...
+  let longestStr = arr.reduce((longest, str)=> longest.length > str.length ? longest : str,'');
+  return arr.findIndex(string => string === longestStr);
 };
-  
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -19,7 +20,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  return arr.map(str => str.slice(0,1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,7 +32,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  let regex = /[:][)]/;
+  return arr.filter(str => regex.test(str));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,11 +45,11 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  return arr.map(str=> str.slice(1,4)+str.slice(6,9)+str.slice(10,14));
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
 
@@ -55,17 +57,30 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let newStr ='';
+  if(str.length<=1){
+    return newStr;
+  }else{
+    for(let i = 1;i<=str.length;i=i+2){
+      if(i===str.length){
+        newStr = newStr + str.slice(-1);
+      }else{
+        newStr = newStr + str.slice(i, i+1);
+      }
+    }
+    return newStr;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  let regex = /[:][)]/;
+  return arr.map(str=> regex.test(str)).includes(false) ? false : true;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -285,4 +300,3 @@ xdescribe('Testing challenge 11', () => {
     expect(characterByIndex(['wow', 'wow', 'wow'])).toStrictEqual(['w', 'o', 'w']);
   });
 });
-
