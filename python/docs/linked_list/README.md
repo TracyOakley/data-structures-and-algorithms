@@ -1,11 +1,7 @@
 # Singly Linked List
-<!-- Short summary or background information -->
+
++ [Link to the Linked List](../../data_structures/linked_list.py)
 
 ## Challenge
-<!-- Description of the challenge -->
+Lab 5
 
-## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-
-## API
-<!-- Description of each method publicly available to your Linked List -->
