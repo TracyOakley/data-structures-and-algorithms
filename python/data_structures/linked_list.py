@@ -5,7 +5,9 @@ class Node:
         self.next_ = next_
 
     def __str__(self):
-        return f"{ {self.value} }"
+
+        return f"{self.value}"
+
 
 
 class LinkedList:
@@ -14,8 +16,8 @@ class LinkedList:
     """
 
     def __init__(self):
-        #self.linked_list = []
         self.head = None
+
 
 
     def kth_from_end(self, position):
@@ -50,11 +52,15 @@ class LinkedList:
 
         current = self.head
 
-        while current:
-            if current.next_ is None:
-                current.next_ = Node(value)
-                break
-            current = current.next_
+        if current is None:
+            self.head = Node(value)
+        else:
+
+            while current:
+                if current.next_ is None:
+                    current.next_ = Node(value)
+                    break
+                current = current.next_
 
 
 
@@ -128,7 +134,8 @@ class LinkedList:
         current = self.head
 
         while current:
-            node_string = "{ " + current.value +" } -> "
+
+            node_string = "{ " + str(current.value) +" } -> "
             list_string += node_string
             current = current.next_
 
