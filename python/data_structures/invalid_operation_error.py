@@ -1,2 +1,6 @@
 class InvalidOperationError(Exception):
-    pass
+
+    def __str__(self):
+        return "Method not allowed on empty collection"
+
+
