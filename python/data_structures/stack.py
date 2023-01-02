@@ -19,7 +19,7 @@ class Stack:
         self.top = top
 
     def __str__(self):
-        if self.head is None:
+        if self.top is None:
             return "Method not allowed on empty collection"
 
 
@@ -45,7 +45,6 @@ class Stack:
         if self.top is None:
             return True
         return False
-
 
     def peek(self):
         if self.top is None:
