@@ -1,5 +1,6 @@
 from data_structures.invalid_operation_error import InvalidOperationError
 
+
 class Node:
     def __init__(self, value, next_=None):
         self.value = value
@@ -23,7 +24,7 @@ class Queue:
     def enqueue(self, value):
         if self.front is None:
             self.front = self.rear = Node(value)
-            #self.front = Node(value)
+            #self.front = Node(value) bc creating a new Node and not the same reference even though same value
             #self.rear = Node(value)
 
             return

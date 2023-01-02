@@ -2,11 +2,12 @@ import pytest
 from code_challenges.stack_queue_pseudo import PseudoQueue
 
 
+
 def test_exists():
     assert PseudoQueue
 
 
-@pytest.mark.skip("TODO")
+#@pytest.mark.skip("TODO")
 def test_enqueue_one():
     pq = PseudoQueue()
     pq.enqueue("apples")
@@ -15,13 +16,17 @@ def test_enqueue_one():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+#@pytest.mark.skip("TODO")
 def test_enqueue_two():
     pq = PseudoQueue()
     pq.enqueue("apples")
+    print(pq.InputStack.top)
+    print(pq.OutputStack.top)
     pq.enqueue("bananas")
-
+    print(pq.InputStack.top)
+    print(pq.OutputStack.top)
     actual = pq.dequeue()
+
     expected = "apples"
     assert actual == expected
 
@@ -30,15 +35,17 @@ def test_enqueue_two():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+#@pytest.mark.skip("TODO")
 def test_enqueue_dequeue_enqueue_dequeue():
     pq = PseudoQueue()
     pq.enqueue("apples")
+
     pq.enqueue("bananas")
 
     pq.dequeue()
 
     pq.enqueue("cucumbers")
+
     pq.enqueue("dates")
 
     actual = [pq.dequeue(), pq.dequeue(), pq.dequeue()]
@@ -46,3 +53,5 @@ def test_enqueue_dequeue_enqueue_dequeue():
     expected = ["bananas", "cucumbers", "dates"]
 
     assert actual == expected
+
+
