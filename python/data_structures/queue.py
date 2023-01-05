@@ -30,7 +30,7 @@ class Queue:
             return
 
         if self.front == self.rear:
-            print("yes")
+
             self.front.next_ = self.rear = Node(value)
             # self.front.next_ = Node(value)
             # self.rear = Node(value)
