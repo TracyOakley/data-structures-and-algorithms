@@ -7,6 +7,18 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
+    def find_maximum_value(self):
+        input_list = self.in_order()
+        print(type(input_list))
+
+        max_value = input_list[0]
+
+        for i in range(len(input_list)):
+            if max_value < input_list[i]:
+                max_value = input_list[i]
+
+        return max_value
+
     def pre_order(self, root=None, nodes=None):
 
         if root is None:
