@@ -21,7 +21,6 @@ class BinarySearchTree(BinaryTree):
         if root is None:
             root = self.root
 
-
         if value > root.value:
             if root.right is None:
                 root.right = Node(value)
